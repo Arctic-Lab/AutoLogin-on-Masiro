@@ -17,7 +17,7 @@ def work():
         if(cnt > 3):
             break
         cnt = cnt+1
-        # time.sleep(random.randint(1, 600))
+        time.sleep(random.randint(1, 600))
         print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
         
         length1 = len(session.get("https://masiro.me/admin").content)
@@ -44,7 +44,7 @@ def work():
         length = len(session.get("https://masiro.me/admin").content)
 
         s = str(session.get('https://masiro.me/admin/userCenterShow').content, 'utf-8')
-        s = re.findall(r'\u8D44\u5386:.{4}', s)[0]
+        s = re.findall(r'\u8D44\u5386.+\u5929', s)[0]
         print(s)
 
         if(length > length1):
